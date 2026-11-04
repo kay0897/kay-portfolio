@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>肖珂 · 作品集 | XIAO KE PORTFOLIO</title>
+<meta name="description" content="肖珂的个人作品集：摄影、海报、公众号排版与短视频作品。新闻学在读，内容创作者。">
+<style>
+:root{
+  --paper:#f5f5f3; --ink:#17191b; --ink-2:#4b4e4a; --mute:#8a8d88;
+  --moss:#5f6f52; --papaya:#e8722a; --line:#dcdcd6; --card:#ffffff;
+  --serif:"Noto Serif SC","Songti SC","SimSun",serif;
+  --sans:-apple-system,BlinkMacSystemFont,"PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--paper);color:var(--ink);font-family:var(--sans);font-size:15px;line-height:1.75}
+img{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:1160px;margin:0 auto;padding:0 28px}
+
+header{position:fixed;inset:0 0 auto 0;z-index:40;background:rgba(245,245,243,.88);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+.nav{display:flex;align-items:center;justify-content:space-between;height:58px}
+.logo{font-family:var(--serif);font-size:19px;font-weight:700}
+.logo span{font-family:var(--sans);font-size:10px;color:var(--mute);margin-left:10px;letter-spacing:.22em}
+.nav nav{display:flex;gap:28px;font-size:13px;color:var(--ink-2)}
+.nav nav a{position:relative;padding:4px 0}
+.nav nav a:hover{color:var(--ink)}
+.nav nav a::after{content:"";position:absolute;left:0;right:100%;bottom:0;height:1px;background:var(--ink);transition:right .25s ease}
+.nav nav a:hover::after{right:0}
+
+.hero{position:relative;height:88vh;min-height:540px;overflow:hidden;background:var(--ink)}
+.hero img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 38%}
+.hero::after{content:"";position:absolute;inset:0;background:linear-gradient(80deg,rgba(16,18,16,.84) 0%,rgba(16,18,16,.46) 44%,rgba(16,18,16,.06) 78%)}
+.hero-in{position:relative;z-index:2;height:100%;display:flex;flex-direction:column;justify-content:flex-end;padding-bottom:8vh;color:#f4f4f0}
+.hero-kicker{display:flex;align-items:center;gap:14px;font-size:11px;letter-spacing:.3em;color:#c8cdc2;margin-bottom:20px}
+.hero-kicker::before{content:"";width:44px;height:1px;background:#c8cdc2}
+.hero h1{font-family:var(--serif);font-size:clamp(44px,7.4vw,86px);line-height:1.1;font-weight:700}
+.hero h1 em{font-style:normal;font-weight:400;color:#e9d8c4}
+.hero-sub{margin-top:16px;max-width:500px;font-size:14px;color:#d3d6cd}
+.hero-stats{display:flex;margin-top:36px;border-top:1px solid rgba(244,244,240,.32);max-width:660px}
+.hero-stats div{flex:1;padding:14px 18px 0 0}
+.hero-stats div+div{border-left:1px solid rgba(244,244,240,.2);padding-left:22px}
+.hero-stats b{display:block;font-family:var(--serif);font-size:24px;font-weight:700}
+.hero-stats i{font-style:normal;font-size:11px;color:#b4b8ac;letter-spacing:.06em}
+.scroll-cue{position:absolute;right:30px;bottom:26px;z-index:2;display:flex;flex-direction:column;align-items:center;gap:8px;color:#c8cdc2;font-size:10px;letter-spacing:.28em}
+.scroll-cue::after{content:"";width:1px;height:44px;background:linear-gradient(#c8cdc2,transparent)}
+
+.sec{padding-top:84px}
+.sec-head{display:flex;align-items:baseline;gap:18px;border-top:1px solid var(--line);padding-top:22px;flex-wrap:wrap}
+.sec-head .idx{font-family:var(--serif);font-size:13px;color:var(--moss);letter-spacing:.2em}
+.sec-head h2{font-family:var(--serif);font-size:29px;font-weight:700;flex:1}
+.sec-head h2 small{font-family:var(--sans);font-size:10px;letter-spacing:.26em;color:var(--mute);margin-left:14px;font-weight:400}
+.tabs{display:flex;gap:4px;background:#ebebe6;border:1px solid var(--line);border-radius:8px;padding:3px}
+.tabs button{border:0;background:transparent;font-family:var(--sans);font-size:12.5px;color:var(--ink-2);padding:6px 15px;border-radius:6px;cursor:pointer;transition:background .2s,color .2s}
+.tabs button.on{background:var(--ink);color:#f4f4f0}
+
+.grid{columns:3;column-gap:16px;margin-top:26px}
+.card{break-inside:avoid;margin:0 0 16px;background:var(--card);border:1px solid var(--line);border-radius:8px;overflow:hidden;cursor:pointer;transition:transform .25s ease,box-shadow .25s ease,border-color .25s ease}
+.card:hover{transform:translateY(-3px);box-shadow:0 16px 36px rgba(23,25,27,.1);border-color:#c9c9c2}
+.card figure{overflow:hidden;background:#e8e8e3}
+.card img{width:100%;transition:transform .6s ease}
+.card:hover img{transform:scale(1.03)}
+.card .cap{padding:12px 15px 4px;display:flex;justify-content:space-between;align-items:baseline;gap:10px}
+.card .cap b{font-size:14px;font-weight:600}
+.card .cap i{font-style:normal;font-size:10.5px;color:var(--mute);white-space:nowrap;letter-spacing:.06em}
+.card .tagline{padding:0 15px 13px;font-size:12px;color:var(--ink-2)}
+.card--data{background:var(--ink);border-color:var(--ink);color:#f4f4f0;cursor:default}
+.card--data:hover{transform:none;box-shadow:none;border-color:var(--ink)}
+.card--data .dhead{padding:17px 17px 3px;display:flex;justify-content:space-between;align-items:baseline}
+.card--data .dhead b{font-family:var(--serif);font-size:16px}
+.card--data .dhead i{font-style:normal;font-size:10.5px;color:#9aa094;letter-spacing:.14em}
+.card--data .nums{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:#2b2e2b;margin:13px 17px 15px;border:1px solid #2b2e2b}
+.card--data .nums div{background:#1d201d;padding:11px 13px}
+.card--data .nums b{display:block;font-family:var(--serif);font-size:21px;color:#f0e8dd}
+.card--data .nums i{font-style:normal;font-size:10.5px;color:#9aa094}
+.card--data .dnote{padding:0 17px 17px;font-size:12px;color:#b9bdb2}
+
+.gzh-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:26px}
+.gzh{background:var(--card);border:1px solid var(--line);border-radius:8px;overflow:hidden;display:flex;flex-direction:column;transition:transform .25s ease,box-shadow .25s ease,border-color .25s ease}
+.gzh:hover{transform:translateY(-3px);box-shadow:0 16px 36px rgba(23,25,27,.1);border-color:#c9c9c2}
+.gzh figure{aspect-ratio:16/10;overflow:hidden;background:#e8e8e3}
+.gzh figure img{width:100%;height:100%;object-fit:cover;transition:transform .6s ease}
+.gzh:hover figure img{transform:scale(1.03)}
+.gzh .body{padding:20px 22px 22px;display:flex;flex-direction:column;gap:10px;flex:1}
+.gzh h3{font-family:var(--serif);font-size:19px;line-height:1.45;font-weight:700}
+.gzh .meta{font-size:11.5px;color:var(--mute);letter-spacing:.08em}
+.gzh .meta b{color:var(--moss);font-weight:600}
+.gzh p{font-size:13px;color:var(--ink-2)}
+.gzh .foot{margin-top:auto;display:flex;align-items:center;justify-content:space-between;gap:12px;padding-top:6px}
+.sw{display:flex;gap:6px}
+.sw span{width:15px;height:15px;border-radius:50%;border:1px solid rgba(23,25,27,.14)}
+.gzh a.more{font-size:12.5px;color:var(--ink);border-bottom:1px solid var(--ink);padding-bottom:2px;white-space:nowrap}
+.gzh a.more:hover{color:var(--papaya);border-color:var(--papaya)}
+
+.lb{position:fixed;inset:0;z-index:60;background:rgba(16,17,16,.9);display:none;align-items:center;justify-content:center;padding:4vh 4vw}
+.lb.on{display:flex}
+.lb figure{max-width:min(880px,92vw);max-height:92vh;display:flex;flex-direction:column;gap:12px}
+.lb .imgbox{overflow:auto;max-height:78vh;background:#101110;border:1px solid #33362f}
+.lb img{margin:0 auto;width:auto;max-width:100%}
+.lb figcaption{color:#d9dbd4;font-size:13px;display:flex;justify-content:space-between;gap:16px}
+.lb figcaption b{color:#f4f4f0;font-size:15px}
+.lb button{position:fixed;top:50%;transform:translateY(-50%);border:1px solid #4a4d47;background:rgba(20,21,20,.6);color:#f4f4f0;width:44px;height:44px;border-radius:50%;font-size:18px;cursor:pointer}
+.lb .prev{left:18px}.lb .next{right:18px}
+.lb .close{top:18px;right:18px;transform:none}
+
+.about-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:56px;padding:26px 0 76px}
+.about p{color:var(--ink-2);margin-bottom:13px;font-size:14px}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:18px}
+.chips span{border:1px solid var(--line);background:#fff;border-radius:999px;padding:4px 13px;font-size:12px;color:var(--ink-2)}
+.tl{border-left:1px solid var(--line);padding-left:26px}
+.tl li{list-style:none;position:relative;padding-bottom:20px}
+.tl li::before{content:"";position:absolute;left:-30px;top:8px;width:8px;height:8px;border-radius:50%;background:var(--moss)}
+.tl li.hot::before{background:var(--papaya)}
+.tl b{font-size:14px}
+.tl time{display:block;font-size:10.5px;letter-spacing:.14em;color:var(--mute);margin-bottom:2px}
+.tl p{font-size:12.5px;color:var(--ink-2);margin:2px 0 0}
+
+footer{background:var(--ink);color:#d9dbd4;padding:66px 0 38px}
+footer .fidx{font-family:var(--serif);font-size:12px;color:#8a9184;letter-spacing:.2em}
+footer h2{font-family:var(--serif);font-size:33px;color:#f4f4f0;margin:6px 0 8px}
+footer .mail{font-size:16px;color:#e9d8c4;border-bottom:1px solid rgba(233,216,196,.4);padding-bottom:2px}
+.fgrid{display:flex;justify-content:space-between;gap:28px;flex-wrap:wrap;margin-top:28px;font-size:13px}
+.fgrid div b{display:block;color:#f4f4f0;font-size:11px;letter-spacing:.22em;margin-bottom:6px;font-weight:600}
+.fgrid a:hover{color:#fff}
+.fine{margin-top:44px;padding-top:16px;border-top:1px solid #2b2e2b;font-size:11.5px;color:#8a8d88;display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap}
+
+.rv{opacity:0;transform:translateY(14px);transition:opacity .6s ease,transform .6s ease}
+.rv.in{opacity:1;transform:none}
+
+@media (max-width:900px){
+  .grid{columns:2}
+  .gzh-grid{grid-template-columns:1fr}
+  .about-grid{grid-template-columns:1fr;gap:34px}
+  .hero-stats{flex-wrap:wrap}
+  .hero-stats div{flex:1 1 42%}
+}
+@media (max-width:560px){
+  .grid{columns:1}
+  .nav nav{gap:16px;font-size:12px}
+  .wrap{padding:0 18px}
+  .sec{padding-top:62px}
+  .scroll-cue{display:none}
+}
+</style>
+</head>
+<body>
+<header>
+  <div class="wrap nav">
+    <a class="logo" href="#top">肖珂<span>XIAO KE · PORTFOLIO</span></a>
+    <nav>
+      <a href="#works">作品</a>
+      <a href="#gzh">公众号</a>
+      <a href="#about">关于</a>
+      <a href="#contact">联系</a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero" id="top">
+  <img src="assets/img/kansai-2.jpg" alt="雨季关西：奈良公园草坪上撑伞跑过的人与鹿群">
+  <div class="wrap hero-in">
+    <div class="hero-kicker">PHOTOGRAPHY / POSTER / WECHAT / SHORT VIDEO</div>
+    <h1>肖珂<br><em>把日常拍成值得收藏的版本</em></h1>
+    <p class="hero-sub">新闻学在读 · 内容创作者。做采访写稿，也做摄影、海报、公众号排版与短视频；相信好内容来自现场、数据和一遍遍修改。</p>
+    <div class="hero-stats">
+      <div><b>20W+</b><i>单条视频最高播放</i></div>
+      <div><b>10W+</b><i>官方平台作品浏览</i></div>
+      <div><b>3 年+</b><i>抖音独立运营</i></div>
+      <div><b>366%</b><i>单周期涨粉幅度</i></div>
+    </div>
+  </div>
+  <div class="scroll-cue">SCROLL</div>
+</section>
+
+<main class="wrap">
+  <section class="sec" id="works">
+    <div class="sec-head rv">
+      <span class="idx">01</span>
+      <h2>作品<small>SELECTED WORKS</small></h2>
+      <div class="tabs" id="tabs">
+        <button class="on" data-f="all">全部</button>
+        <button data-f="photo">摄影</button>
+        <button data-f="poster">海报</button>
+        <button data-f="video">短视频</button>
+      </div>
+    </div>
+    <div class="grid" id="grid"></div>
+  </section>
+
+  <section class="sec" id="gzh">
+    <div class="sec-head rv">
+      <span class="idx">02</span>
+      <h2>公众号排版<small>WECHAT EDITORIAL</small></h2>
+    </div>
+    <div class="gzh-grid">
+      <article class="gzh rv">
+        <figure><img loading="lazy" src="assets/img/gzh-run-1.jpg" alt="校园跑跑步人设推文中的跑步记录拼版"></figure>
+        <div class="body">
+          <h3>冬天到了，你的校园跑跑完了吗？速来认领你的跑步人设！</h3>
+          <div class="meta"><b>一犁芳田</b> ｜ 2025.12 ｜ 排版编辑 · 图文策划</div>
+          <p>冬季校园跑主题互动推文：跑步人设测试、装备清单与跑团招募，手绘感色块 + 拼贴版式贯穿全篇。</p>
+          <div class="foot">
+            <div class="sw"><span style="background:#d9f27e"></span><span style="background:#23403c"></span><span style="background:#f4f8fb"></span></div>
+            <a class="more" href="https://mp.weixin.qq.com/s/NhJ2jyW91DwE2GUjBBeLbw" target="_blank" rel="noopener">查看原文 ↗</a>
+          </div>
+        </div>
+      </article>
+      <article class="gzh rv">
+        <figure><img loading="lazy" src="assets/img/gzh-weather-1.jpg" alt="万里天气推文中的校园红砖建筑照片"></figure>
+        <div class="body">
+          <h3>小碗仔们，快来 pick 你的万里天气</h3>
+          <div class="meta"><b>一犁芳田</b> ｜ 2025.04 ｜ 排版编辑 · 图文策划</div>
+          <p>四月校园气象简讯：晴天、雨天、阴天、大风天四种情绪版式，粉蓝与鹅黄的轻量插画系统。</p>
+          <div class="foot">
+            <div class="sw"><span style="background:#8ed0f0"></span><span style="background:#f6e3a1"></span><span style="background:#eef6fb"></span></div>
+            <a class="more" href="https://mp.weixin.qq.com/s/FCIsVJjmLs3CIr29QvcqkA" target="_blank" rel="noopener">查看原文 ↗</a>
+          </div>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <section class="sec" id="about">
+    <div class="sec-head rv">
+      <span class="idx">03</span>
+      <h2>关于<small>ABOUT</small></h2>
+    </div>
+    <div class="about-grid">
+      <div class="rv">
+        <p>我是肖珂，浙江万里学院新闻学本科在读（2027 届）。受过系统的采写、编辑与传播策划训练，在市级医疗构宣传科与融媒体中心各有一段实习，产出的稿件与短视频在官方平台发布，累计浏览 10 万+。</p>
+        <p>内容之外，我也做「自己发起」的创作：独立运营抖音账号三年，影视与音乐方向单条最高播放 20 万+；把旅行里拍下的胶片感照片整理成系列，再做成海报；也是校园公众号「一犁芳田」的排版编辑，两篇主排推文成为当季阅读高峰。</p>
+        <p>舞台也是我的训练场：校话剧社导演 / 编剧，负责剧本改编、演员调度与舞美统筹，《记忆交换站》获校文化节「老师最喜欢节目」第四名。</p>
+        <div class="chips">
+          <span>采访写作</span><span>活动策划</span><span>剪映</span><span>Premiere</span><span>Photoshop</span><span>公众号排版</span><span>短视频运营</span><span>数据复盘</span><span>话剧导演</span><span>CET-6</span>
+        </div>
+      </div>
+      <ul class="tl rv">
+        <li><time>2023.09 - 2027.06</time><b>浙江万里学院 · 新闻学 · 本科</b><p>校园公众号「一犁芳田」排版编辑；校园社会调查核心策划。</p></li>
+        <li class="hot"><time>2025.01 - 2026.03</time><b>宜昌市医共体（妇幼保健院）宣传科 · 宣传干事实习</b><p>3 篇官方稿件、6 件短视频，官方平台浏览 10 万+；参与重大主题活动宣传策划与执行。</p></li>
+        <li><time>2024.07 - 2024.09</time><b>宜昌市融媒体中心 · 新闻采编实习</b><p>参与青林寺古镇旅游项目宣传片拍摄，官方平台浏览 4000+。</p></li>
+        <li><time>2026.06 - 2026.09</time><b>美国 SWT 文化交流项目 · 室内乐票务</b><p>英语环境独立工作，成交 158 张票，获评「优秀暑假工」。</p></li>
+        <li class="hot"><time>2023.06 - 至今</time><b>抖音独立创作者 · 影视 / 音乐方向</b><p>单条最高播放 20 万+，涨粉 366%；独立完成选题、脚本、拍摄、剪辑与发布。</p></li>
+        <li><time>2023.09 - 至今</time><b>校话剧社 · 导演 / 编剧</b><p>《记忆交换站》《青年书》等作品登上校级大型舞台并获奖。</p></li>
+      </ul>
+    </div>
+  </section>
+</main>
+
+<footer id="contact">
+  <div class="wrap">
+    <div class="fidx">04</div>
+    <h2>保持联系</h2>
+    <p style="max-width:540px;font-size:14px">实习、约稿、合作创作，或只是想看更多照片，都欢迎来信。</p>
+    <p style="margin-top:16px"><a class="mail" href="mailto:2816325513@qq.com">2816325513@qq.com</a></p>
+    <div class="fgrid">
+      <div><b>PHONE</b>+86 153 3745 0652</div>
+      <div><b>BASE</b>宁波 · 籍贯 宜昌</div>
+      <div><b>EDUCATION</b>浙江万里学院 · 新闻学 · 2027 届</div>
+      <div><b>WECHAT</b><a href="https://mp.weixin.qq.com/s/NhJ2jyW91DwE2GUjBBeLbw" target="_blank" rel="noopener">跑步人设 ↗</a> <a href="https://mp.weixin.qq.com/s/FCIsVJjmLs3CIr29QvcqkA" target="_blank" rel="noopener">万里天气 ↗</a></div>
+    </div>
+    <div class="fine"><span>© 2026 肖珂 XIAO KE</span><span>PHOTO / POSTER / WECHAT / SHORT VIDEO</span></div>
+  </div>
+</footer>
+
+<div class="lb" id="lb">
+  <button class="close" id="lbClose" aria-label="关闭">×</button>
+  <button class="prev" id="lbPrev" aria-label="上一张">‹</button>
+  <button class="next" id="lbNext" aria-label="下一张">›</button>
+  <figure>
+    <div class="imgbox"><img id="lbImg" alt=""></div>
+    <figcaption><b id="lbTitle"></b><span id="lbMeta"></span></figcaption>
+  </figure>
+</div>
+
+<script>
+const WORKS = [
+  {cat:'photo', img:'kansai-2.jpg', title:'鹿群 · 雨季关西', meta:'摄影 / 2025', note:'奈良公园，撑伞跑过草坪的人与鹿。', tagline:'关西雨日系列 02'},
+  {cat:'poster', img:'poster-kansai.jpg', title:'雨季关西', meta:'海报 / 2026', note:'关西雨日系列主视觉海报：照片满版 + 宋体大标题 + 留白带。', tagline:'系列主视觉'},
+  {cat:'photo', img:'kansai-6.jpg', title:'雨藤 · 雨季关西', meta:'摄影 / 2025', note:'雨天藤架下的石灯笼群。', tagline:'关西雨日系列 06'},
+  {cat:'video', data:true, title:'抖音 · 影视方向单条', meta:'短视频 / 数据', nums:[['18.4W','播放量'],['9548','点赞量'],['2018','分享量'],['1227','收藏量']], note:'后台数据截图存档；完播与跳出指标见创作者中心。'},
+  {cat:'photo', img:'f1-4.jpg', title:'近影 · F1 上海', meta:'摄影 / 2026', note:'上海国际赛车场追焦近影。', tagline:'F1 上海站系列'},
+  {cat:'poster', img:'poster-speed.jpg', title:'时速', meta:'海报 / 2026', note:'F1 上海站主题海报：黑底 + 细框照片 + 木瓜橙标题。', tagline:'F1 主题'},
+  {cat:'photo', img:'kansai-3.jpg', title:'石灯笼 · 雨季关西', meta:'摄影 / 2025', note:'春日大社参道旁覆苔的石灯笼。', tagline:'关西雨日系列 03'},
+  {cat:'photo', img:'geo-1.jpg', title:'留白练习', meta:'摄影 / 2026', note:'白色体块、蓝天与一丛三角梅的几何练习。', tagline:'建筑 · 几何'},
+  {cat:'poster', img:'poster-white.jpg', title:'留白', meta:'海报 / 2026', note:'建筑几何主题海报。', tagline:'几何主题'},
+  {cat:'photo', img:'kansai-5.jpg', title:'檐下 · 雨季关西', meta:'摄影 / 2025', note:'檐下避雨的学生与庭园。', tagline:'关西雨日系列 05'},
+  {cat:'video', data:true, title:'抖音 · 音乐方向单条', meta:'短视频 / 数据', nums:[['8585','播放量'],['389','点赞量'],['42','分享量'],['19','收藏量']], note:'音乐向剪辑单条后台数据存档。'},
+  {cat:'photo', img:'nature-1.jpg', title:'湖与山', meta:'摄影 / 2026', note:'湖面天鹅与远处的雪山。', tagline:'自然 · 生态'},
+  {cat:'poster', img:'poster-lake.jpg', title:'湖山', meta:'海报 / 2026', note:'自然生态主题海报。', tagline:'自然主题'},
+  {cat:'photo', img:'kansai-7.jpg', title:'车窗 · 雨季关西', meta:'摄影 / 2025', note:'列车车窗内外的绿色流速。', tagline:'关西雨日系列 07'},
+  {cat:'photo', img:'kansai-1.jpg', title:'手水舍 · 雨季关西', meta:'摄影 / 2025', note:'苔庭里的水音。', tagline:'关西雨日系列 01'},
+  {cat:'poster', img:'poster-way.jpg', title:'途中', meta:'海报 / 2026', note:'旅途主题海报：车窗照片 + 宋体标题。', tagline:'旅途主题'},
+  {cat:'photo', img:'f1-1.jpg', title:'追焦 · 直道', meta:'摄影 / 2026', note:'直道高速追焦。', tagline:'F1 上海站系列'},
+  {cat:'photo', img:'kansai-8.jpg', title:'回廊 · 雨季关西', meta:'摄影 / 2025', note:'雨后回廊与白砂。', tagline:'关西雨日系列 08'},
+  {cat:'poster', img:'poster-grid.jpg', title:'雨季关西 · 组', meta:'海报 / 2026', note:'四宫格组图海报：系列精选 + 标题带。', tagline:'系列组海报'},
+  {cat:'photo', img:'kansai-4.jpg', title:'参道 · 雨季关西', meta:'摄影 / 2025', note:'石阶尽头的社殿。', tagline:'关西雨日系列 04'},
+  {cat:'photo', img:'f1-2.jpg', title:'弯心 · F1 上海', meta:'摄影 / 2026', note:'弯心处的车身姿态。', tagline:'F1 上海站系列'},
+  {cat:'photo', img:'f1-3.jpg', title:'出弯 · F1 上海', meta:'摄影 / 2026', note:'出弯瞬间的摇摄。', tagline:'F1 上海站系列'},
+];
+
+const grid = document.getElementById('grid');
+let visible = [];
+function render(filter){
+  grid.innerHTML = '';
+  visible = [];
+  WORKS.forEach((w) => {
+    if (filter !== 'all' && w.cat !== filter) return;
+    const idx = visible.length;
+    visible.push(w);
+    const card = document.createElement('article');
+    if (w.data){
+      card.className = 'card card--data rv in';
+      card.innerHTML = '<div class="dhead"><b>'+w.title+'</b><i>'+w.meta+'</i></div>'
+        + '<div class="nums">'+w.nums.map(n=>'<div><b>'+n[0]+'</b><i>'+n[1]+'</i></div>').join('')+'</div>'
+        + '<div class="dnote">'+w.note+'</div>';
+    } else {
+      card.className = 'card rv in';
+      card.innerHTML = '<figure><img loading="lazy" src="assets/img/'+w.img+'" alt="'+w.title+'"></figure>'
+        + '<div class="cap"><b>'+w.title+'</b><i>'+w.meta+'</i></div>'
+        + '<div class="tagline">'+w.tagline+'</div>';
+      card.addEventListener('click', () => openLb(idx));
+    }
+    grid.appendChild(card);
+  });
+}
+render('all');
+
+document.getElementById('tabs').addEventListener('click', e => {
+  const b = e.target.closest('button');
+  if (!b) return;
+  document.querySelectorAll('#tabs button').forEach(x => x.classList.toggle('on', x === b));
+  render(b.dataset.f);
+});
+
+const lb = document.getElementById('lb');
+let cur = 0;
+function openLb(i){
+  cur = i;
+  const w = visible[cur];
+  document.getElementById('lbImg').src = 'assets/img/' + w.img;
+  document.getElementById('lbImg').alt = w.title;
+  document.getElementById('lbTitle').textContent = w.title;
+  document.getElementById('lbMeta').textContent = w.meta + ' · ' + (cur + 1) + ' / ' + visible.length;
+  lb.classList.add('on');
+  document.body.style.overflow = 'hidden';
+}
+function step(d){ openLb((cur + d + visible.length) % visible.length); }
+function closeLb(){ lb.classList.remove('on'); document.body.style.overflow = ''; }
+document.getElementById('lbNext').addEventListener('click', () => step(1));
+document.getElementById('lbPrev').addEventListener('click', () => step(-1));
+document.getElementById('lbClose').addEventListener('click', closeLb);
+lb.addEventListener('click', e => { if (e.target === lb) closeLb(); });
+document.addEventListener('keydown', e => {
+  if (!lb.classList.contains('on')) return;
+  if (e.key === 'Escape') closeLb();
+  if (e.key === 'ArrowRight') step(1);
+  if (e.key === 'ArrowLeft') step(-1);
+});
+
+const io = new IntersectionObserver(es => es.forEach(en => { if (en.isIntersecting){ en.target.classList.add('in'); io.unobserve(en.target); } }), {threshold:.08});
+document.querySelectorAll('.rv').forEach(el => io.observe(el));
+</script>
+</body>
+</html>
