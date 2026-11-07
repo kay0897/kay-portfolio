@@ -21,9 +21,6 @@ const WORKS = [
   {cat:'photo', img:'kansai-4.jpg', title:'参道 · 雨季关西', meta:'摄影 / 2025', note:'石阶尽头的社殿。', tagline:'关西雨日系列 04'},
   {cat:'photo', img:'f1-2.jpg', title:'弯心 · F1 上海', meta:'摄影 / 2026', note:'弯心处的车身姿态。', tagline:'F1 上海站系列'},
   {cat:'photo', img:'f1-3.jpg', title:'出弯 · F1 上海', meta:'摄影 / 2026', note:'出弯瞬间的摇摄。', tagline:'F1 上海站系列'},
-];
-
-const JOURNAL_WORKS = [
   {cat:'photo',img:'journal-window.jpg',title:'窗边绿意',meta:'摄影 / 光影手记',note:'窗光穿过枝叶，照亮室内的绿色植物。',tagline:'光影手记 · 01'},
   {cat:'photo',img:'journal-dome.jpg',title:'林间金顶',meta:'摄影 / 光影手记',note:'从树枝与树影之间望见暖金色的建筑穹顶。',tagline:'光影手记 · 02'},
   {cat:'photo',img:'journal-street.jpg',title:'树影街巷',meta:'摄影 / 光影手记',note:'浓密树冠、停泊的汽车与街道上的斑驳阳光。',tagline:'光影手记 · 03'},
