@@ -5,7 +5,14 @@ const featureVideo = document.getElementById('featureVideo');
 const lb = document.getElementById('lb');
 const posterWorks = WORKS.filter(work => work.cat === 'poster');
 const filmWork = {cat:'video', video:true, img:'video-feature.jpg', title:'向前一刻 · DO IT!', meta:'短视频 / 2026', tagline:'点击观看完整影像'};
-const featured = [JOURNAL_WORKS[0], posterWorks[0], JOURNAL_WORKS[5], JOURNAL_WORKS[2], posterWorks[1], JOURNAL_WORKS[6], JOURNAL_WORKS[3], posterWorks[2], JOURNAL_WORKS[7], JOURNAL_WORKS[4], WORKS.find(work => work.img === 'nature-1.jpg'), JOURNAL_WORKS[1]];
+const worksByImage = new Map([...JOURNAL_WORKS, ...WORKS].filter(work => work.img).map(work => [work.img, work]));
+const featured = [
+  'journal-window.jpg', 'poster-kansai-type-v2.jpg', 'f1-4.jpg', 'journal-street.jpg',
+  'poster-speed-type-v2.jpg', 'geo-1.jpg', 'journal-mist.jpg', 'poster-white-type-v2.jpg',
+  'kansai-7.jpg', 'journal-dome.jpg', 'nature-1.jpg', 'poster-grid-type-v2.jpg',
+].map(filename => worksByImage.get(filename)).filter(Boolean);
+const boardWorks = [...document.querySelectorAll('.paper-item[data-image]')]
+  .map(button => worksByImage.get(button.dataset.image)).filter(Boolean);
 const allWorks = [...new Set([...featured, ...JOURNAL_WORKS, ...WORKS, filmWork])];
 let selectedImages = [];
 let gallery = [];
@@ -24,7 +31,7 @@ function render(filter = currentFilter) {
   grid.replaceChildren();
   displayed.forEach(work => {
     const card = document.createElement(work.data ? 'article' : 'button');
-    card.className = 'card' + (work.data ? ' card--data' : ' card--image') + (work.video ? ' card--video' : '') + (work.cat === 'collage' ? ' card--collage' : '');
+    card.className = 'card' + (work.data ? ' card--data' : ' card--image') + (work.video ? ' card--video' : '');
     if (work.data) {
       card.innerHTML = '<div class="dhead"><b>' + work.title + '</b><i>' + work.meta + '</i></div><div class="nums">'
         + work.nums.map(item => '<div><b>' + item[0] + '</b><i>' + item[1] + '</i></div>').join('') + '</div><div class="dnote">' + work.note + '</div>';
@@ -61,18 +68,16 @@ document.getElementById('loadMore').addEventListener('click', () => {
 });
 
 document.querySelectorAll('.poster-sheet').forEach(button => { button.dataset.group = 'poster'; });
-document.querySelectorAll('.paper-item').forEach(button => { button.dataset.group = 'collage'; });
+document.querySelectorAll('.paper-item').forEach(button => { button.dataset.group = 'board'; });
 document.querySelectorAll('.photo-print, .journal-cover, .contact-photo').forEach(button => { button.dataset.group = 'journal'; });
 
 document.addEventListener('click', event => {
-  const filterLink = event.target.closest('[data-filter-link]');
-  if (filterLink) { expanded = false; render(filterLink.dataset.filterLink); }
   const button = event.target.closest('button[data-image]');
   if (button) {
     const scope = button.dataset.group;
     gallery = scope === 'archive' ? selectedImages
       : scope === 'poster' ? posterWorks
-      : scope === 'collage' ? JOURNAL_WORKS.filter(work => work.cat === 'collage')
+      : scope === 'board' ? boardWorks
       : JOURNAL_WORKS.filter(work => work.cat === 'photo');
     const index = gallery.findIndex(work => work.img === button.dataset.image);
     if (index >= 0) openLightbox(index);

@@ -28,12 +28,5 @@ const JOURNAL_WORKS = [
   {cat:'photo',img:'journal-dome.jpg',title:'林间金顶',meta:'摄影 / 光影手记',note:'从树枝与树影之间望见暖金色的建筑穹顶。',tagline:'光影手记 · 02'},
   {cat:'photo',img:'journal-street.jpg',title:'树影街巷',meta:'摄影 / 光影手记',note:'浓密树冠、停泊的汽车与街道上的斑驳阳光。',tagline:'光影手记 · 03'},
   {cat:'photo',img:'journal-mist.jpg',title:'雾中水线',meta:'摄影 / 光影手记',note:'雾气中的绿色草地与一小段弯曲水线。',tagline:'光影手记 · 04'},
-  {cat:'photo',img:'journal-tulips.jpg',title:'光落花间',meta:'摄影 / 光影手记',note:'斑驳窗影下，橘色郁金香从绿色叶片间探出。',tagline:'光影手记 · 05'},
-  {cat:'collage',img:'collage-park.jpg',title:'公园小憩',meta:'拼贴 / 视觉手记',note:'长椅、倒影与水面的照片，接上一页纸张中的安静白日梦。',tagline:'PAPER PLAY · A calmer day'},
-  {cat:'collage',img:'collage-light.jpg',title:'借一点光',meta:'拼贴 / 视觉手记',note:'吊灯从照片里垂落，手绘人物在纸张上伸手借一点光。',tagline:'PAPER PLAY · Borrow a little light'},
-  {cat:'collage',img:'collage-seaside.jpg',title:'再近一点海',meta:'拼贴 / 视觉手记',note:'把海边风景延伸到纸上，接上一架通往海风的手绘梯子。',tagline:'PAPER PLAY · One ladder away'},
-  {cat:'collage',img:'collage-sunshine.jpg',title:'晴日草坡',meta:'拼贴 / 视觉手记',note:'草坡与水边的人们，构成一张关于阳光的摄影拼贴。',tagline:'PAPER PLAY · More sunshine, please'},
-  {cat:'collage',img:'collage-sunset.jpg',title:'把日落往前推',meta:'拼贴 / 视觉手记',note:'落日中的海上桥梁伸出纸边，与手绘滚筒连接。',tagline:'PAPER PLAY · Rolling the sunset'},
-  {cat:'collage',img:'collage-daydream.jpg',title:'岩岸白日梦',meta:'拼贴 / 视觉手记',note:'岩岸、海水与游船的风景，接入纸张上的手绘小船。',tagline:'PAPER PLAY · Between rock & daydream'},
 ];
 
