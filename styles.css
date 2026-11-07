@@ -186,7 +186,7 @@ header { background: #f7f5eef5; }
 .hero-board .note-sticker b {
   margin-top: 8px;
   color: #17210e;
-  font: 800 clamp(22px, 2.5vw, 31px)/.96 Arial, sans-serif;
+  font: 800 clamp(22px, 2.5vw, 27px)/.96 Arial, sans-serif;
   letter-spacing: -.055em;
   text-align: center;
   text-shadow: 0 0 .65px currentColor;
