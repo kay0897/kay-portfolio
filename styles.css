@@ -170,26 +170,42 @@ header { background: #f7f5eef5; }
   mix-blend-mode: normal;
 }
 .note-sticker {
-  width: clamp(120px, 15vw, 166px);
+  width: clamp(140px, 16vw, 184px);
   min-height: 0;
   bottom: 29px;
   left: 1%;
-  padding: 14px 16px;
+  align-items: stretch;
+  padding: 13px 12px;
   transform: rotate(-6deg);
-  border: 1px solid var(--ink);
-  border-radius: 6px;
-  box-shadow: 4px 4px 0 #17241b24;
+  border: 1px solid #17210e;
+  border-radius: 1px;
+  background: #b6f346;
+  box-shadow: 3px 4px 0 #17241b2e;
 }
 .note-sticker small, .note-sticker span { color: var(--ink); font: 8px/1.5 var(--mono); }
 .hero-board .note-sticker b {
-  margin-top: 3px;
-  font-family: var(--sans);
-  font-size: clamp(17px, 2vw, 23px);
-  font-weight: 800;
-  line-height: 1.2;
+  margin-top: 8px;
+  color: #17210e;
+  font: 800 clamp(22px, 2.5vw, 31px)/.96 Arial, sans-serif;
+  letter-spacing: -.055em;
+  text-align: center;
+  text-shadow: 0 0 .65px currentColor;
+  white-space: nowrap;
 }
-.note-sticker span { margin-top: 7px; }
-.hero-doodle { color: var(--moss); }
+.note-sticker span { margin-top: 10px; text-align: right; }
+.frog-swatch {
+  position: absolute;
+  z-index: 1;
+  top: 8%;
+  right: 3%;
+  width: clamp(92px, 25%, 168px);
+  aspect-ratio: 5 / 4;
+  border: 1px solid #17210e;
+  background: #b6f346 url("assets/img/frog-spot-tile.svg") center / 118px 86px;
+  box-shadow: 3px 4px 0 #17241b25;
+  transform: rotate(9deg);
+  pointer-events: none;
+}
 .hero-foot { font-size: 9px; letter-spacing: .04em; }
 
 /* Chapter markers, contact sheet and four-image board. */
@@ -281,6 +297,19 @@ header { background: #f7f5eef5; }
 }
 .paper-caption b { font-family: var(--sans); font-weight: 750; }
 .paper-caption small { letter-spacing: 0; }
+.paper-item[data-image="f1-4.jpg"] .paper-caption small {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+}
+.paper-item[data-image="f1-4.jpg"] .paper-caption small::before {
+  width: 27px;
+  height: 11px;
+  border: 1px solid #17210e;
+  border-radius: 1px;
+  background: #b6f346 url("assets/img/frog-spot-tile.svg") 43% 37% / 34px 25px;
+  content: "";
+}
 
 /* Shared controls and quieter framing for the remaining chapters. */
 .type-section .section-heading .idx { color: var(--ink); }
